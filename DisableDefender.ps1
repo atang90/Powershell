@@ -1,5 +1,5 @@
 # DisableDefender.ps1 
-# Andrew, 11/27/2018 (last revision)
+# Andrew, 11/28/2018 (last revision)
 
 # Description of intent / purpose / general technique
 # Powershell script to Disable Windows Defender
@@ -55,7 +55,8 @@ function MachOS()
             Write-Host "Windows Defender is Already Disabled" -ForegroundColor Yellow
         }
     }
-
+    
+    <# -- this doesn't work b/c system rights are needed for it run
     elseif ($MachOS -like "Microsoft Windows 7*")
     {
         $Win7Path ='HKLM:\Software\Microsoft\Windows Defender'
@@ -71,6 +72,7 @@ function MachOS()
             Write-Host "Windows Defender is Already Disabled" -ForegroundColor Yellow
         }
     }
+    #>
 }
 
 MachOS
